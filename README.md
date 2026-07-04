@@ -90,8 +90,8 @@
 
 #### 1. 克隆项目
 ```bash
-git clone https://github.com/your-username/event-platform.git
-cd event-platform
+git clone https://github.com/3214883/anon.git
+cd anon
 ```
 
 #### 2. 安装依赖
@@ -204,4 +204,4 @@ MIT License
 ## 📞 联系方式
 
 如有问题或建议，请通过以下方式联系：
-- GitHub Issues: https://github.com/your-username/event-platform/issues
+- GitHub Issues: https://github.com/3214883/anon/issues

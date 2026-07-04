@@ -1,0 +1,98 @@
+<mxfile host="app.diagrams.net"><diagram id="ER图" name="活动管理系统ER图"><mxGraphModel dx="1426" dy="956" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0"><root><mxCell id="0"/><mxCell id="1" parent="0"/>
+<!-- 用户实体 -->
+<mxCell id="user" value="用户&#10;user&#10;---&#10;id (PK)&#10;username&#10;email&#10;phone&#10;password&#10;avatar&#10;role&#10;isActive&#10;createdAt" style="rounded=0;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1"><mxGeometry x="100" y="80" width="160" height="200" as="geometry"/></mxCell>
+<!-- 活动实体 -->
+<mxCell id="event" value="活动&#10;event&#10;---&#10;id (PK)&#10;title&#10;description&#10;date&#10;time&#10;location&#10;price&#10;capacity&#10;status&#10;organizerId (FK)" style="rounded=0;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1"><mxGeometry x="350" y="80" width="160" height="200" as="geometry"/></mxCell>
+<!-- 报名表实体 -->
+<mxCell id="registration" value="报名表&#10;registration&#10;---&#10;id (PK)&#10;eventId (FK)&#10;userId (FK)&#10;status&#10;quantity&#10;totalAmount&#10;paymentId&#10;checkedIn" style="rounded=0;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1"><mxGeometry x="600" y="80" width="160" height="180" as="geometry"/></mxCell>
+<!-- 钱包实体 -->
+<mxCell id="wallet" value="钱包&#10;wallet&#10;---&#10;id (PK)&#10;userId (FK)&#10;balance&#10;frozenBalance" style="rounded=0;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1"><mxGeometry x="100" y="350" width="160" height="120" as="geometry"/></mxCell>
+<!-- 支付表实体 -->
+<mxCell id="payment" value="支付表&#10;payment&#10;---&#10;id (PK)&#10;registrationId (FK)&#10;userId (FK)&#10;eventId (FK)&#10;amount&#10;paymentMethod&#10;status" style="rounded=0;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1"><mxGeometry x="350" y="350" width="160" height="140" as="geometry"/></mxCell>
+<!-- 门票表实体 -->
+<mxCell id="ticket" value="门票表&#10;ticket&#10;---&#10;id (PK)&#10;eventId (FK)&#10;name&#10;price&#10;quantity&#10;soldCount&#10;maxPerUser" style="rounded=0;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1"><mxGeometry x="600" y="350" width="160" height="140" as="geometry"/></mxCell>
+<!-- 结算申请表实体 -->
+<mxCell id="settlement" value="结算申请&#10;settlement&#10;---&#10;id (PK)&#10;eventId (FK)&#10;organizerId (FK)&#10;totalAmount&#10;feeAmount&#10;settleAmount&#10;status" style="rounded=0;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1"><mxGeometry x="850" y="80" width="160" height="140" as="geometry"/></mxCell>
+<!-- 评论表实体 -->
+<mxCell id="comment" value="评论表&#10;comment&#10;---&#10;id (PK)&#10;eventId (FK)&#10;userId (FK)&#10;content&#10;parentId&#10;likes" style="rounded=0;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1"><mxGeometry x="850" y="280" width="160" height="140" as="geometry"/></mxCell>
+<!-- 评分表实体 -->
+<mxCell id="rating" value="评分表&#10;rating&#10;---&#10;id (PK)&#10;eventId (FK)&#10;userId (FK)&#10;score&#10;content" style="rounded=0;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1"><mxGeometry x="100" y="550" width="160" height="120" as="geometry"/></mxCell>
+<!-- 聊天消息表实体 -->
+<mxCell id="chat_message" value="聊天消息&#10;chat_message&#10;---&#10;id (PK)&#10;eventId (FK)&#10;userId (FK)&#10;content&#10;createdAt" style="rounded=0;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1"><mxGeometry x="350" y="550" width="160" height="120" as="geometry"/></mxCell>
+<!-- 通知表实体 -->
+<mxCell id="notification" value="通知表&#10;notification&#10;---&#10;id (PK)&#10;userId (FK)&#10;type&#10;title&#10;content&#10;read" style="rounded=0;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1"><mxGeometry x="600" y="550" width="160" height="120" as="geometry"/></mxCell>
+<!-- 钱包交易记录表实体 -->
+<mxCell id="wallet_transaction" value="钱包交易&#10;wallet_transaction&#10;---&#10;id (PK)&#10;walletId (FK)&#10;userId (FK)&#10;amount&#10;type&#10;status" style="rounded=0;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1"><mxGeometry x="850" y="550" width="160" height="120" as="geometry"/></mxCell>
+<!-- 关联表实体 -->
+<mxCell id="event_like" value="活动点赞&#10;event_like&#10;---&#10;id (PK)&#10;eventId (FK)&#10;userId (FK)" style="rounded=0;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1"><mxGeometry x="100" y="750" width="160" height="100" as="geometry"/></mxCell>
+<mxCell id="favorite" value="收藏表&#10;favorite&#10;---&#10;id (PK)&#10;eventId (FK)&#10;userId (FK)" style="rounded=0;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1"><mxGeometry x="350" y="750" width="160" height="100" as="geometry"/></mxCell>
+<mxCell id="checkin" value="签到表&#10;checkin&#10;---&#10;id (PK)&#10;eventId (FK)&#10;userId (FK)&#10;latitude&#10;longitude" style="rounded=0;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1"><mxGeometry x="600" y="750" width="160" height="120" as="geometry"/></mxCell>
+
+<!-- 关系连线 -->
+<!-- 用户-活动 1:N 创建 -->
+<mxCell id="rel1" style="edgeStyle=none;html=1;exitX=1;exitY=0.3;entryX=0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="user" target="event"><mxGeometry relative="1" as="geometry"/><mxCell id="rel1_label" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;exitX=0.5;exitY=0;entryX=0.5;entryY=1;offsetX=0;offsetY=-10;" vertex="1" parent="rel1"><mxGeometry x="0" y="0" width="40" height="20" relative="1" as="geometry"/></mxCell></mxCell>
+<mxCell id="rel1_card1" value="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="rel1"><mxGeometry x="-20" y="40" width="20" height="20" relative="1" as="geometry"/></mxCell>
+<mxCell id="rel1_card2" value="N" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="rel1"><mxGeometry x="20" y="40" width="20" height="20" relative="1" as="geometry"/></mxCell>
+<mxCell id="rel1_text" value="创建" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fillColor=#ffffff;strokeColor=#ffffff;" vertex="1" parent="rel1"><mxGeometry x="0" y="50" width="40" height="20" relative="1" as="geometry"/></mxCell>
+
+<!-- 用户-钱包 1:1 拥有 -->
+<mxCell id="rel2" style="edgeStyle=none;html=1;exitX=1;exitY=1;entryX=0;entryY=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="user" target="wallet"><mxGeometry relative="1" as="geometry"/><mxCell id="rel2_text" value="拥有" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="rel2"><mxGeometry x="0" y="15" width="40" height="20" relative="1" as="geometry"/></mxCell></mxCell>
+
+<!-- 用户-报名表 N:N 报名 -->
+<mxCell id="rel3" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="user" target="registration"><mxGeometry relative="1" as="geometry"/><mxCell id="rel3_text" value="报名" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="rel3"><mxGeometry x="0" y="15" width="40" height="20" relative="1" as="geometry"/></mxCell></mxCell>
+
+<!-- 活动-报名表 1:N -->
+<mxCell id="rel4" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.3;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="event" target="registration"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+<!-- 活动-门票 1:N 包含 -->
+<mxCell id="rel5" style="edgeStyle=none;html=1;exitX=1;exitY=0.7;entryX=0;entryY=0.3;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="event" target="ticket"><mxGeometry relative="1" as="geometry"/><mxCell id="rel5_text" value="包含" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="rel5"><mxGeometry x="0" y="15" width="40" height="20" relative="1" as="geometry"/></mxCell></mxCell>
+
+<!-- 报名表-支付 1:1 -->
+<mxCell id="rel6" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="registration" target="payment"><mxGeometry relative="1" as="geometry"/><mxCell id="rel6_text" value="支付" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="rel6"><mxGeometry x="0" y="15" width="40" height="20" relative="1" as="geometry"/></mxCell></mxCell>
+
+<!-- 活动-结算申请 1:N -->
+<mxCell id="rel7" style="edgeStyle=none;html=1;exitX=1;exitY=0.3;entryX=0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="event" target="settlement"><mxGeometry relative="1" as="geometry"/><mxCell id="rel7_text" value="发起" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="rel7"><mxGeometry x="0" y="15" width="40" height="20" relative="1" as="geometry"/></mxCell></mxCell>
+
+<!-- 用户-评论 N:N -->
+<mxCell id="rel8" style="edgeStyle=none;html=1;exitX=0.8;exitY=1;entryX=0.2;entryY=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="user" target="comment"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+<!-- 活动-评论 1:N -->
+<mxCell id="rel9" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="event" target="comment"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+<!-- 用户-评分 N:N -->
+<mxCell id="rel10" style="edgeStyle=none;html=1;exitX=1;exitY=0.3;entryX=0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="user" target="rating"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+<!-- 活动-评分 1:N -->
+<mxCell id="rel11" style="edgeStyle=none;html=1;exitX=0.3;exitY=1;entryX=0.5;entryY=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="event" target="rating"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+<!-- 用户-聊天消息 N:N -->
+<mxCell id="rel12" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="user" target="chat_message"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+<!-- 活动-聊天消息 1:N -->
+<mxCell id="rel13" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="event" target="chat_message"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+<!-- 用户-通知 1:N -->
+<mxCell id="rel14" style="edgeStyle=none;html=1;exitX=0.8;exitY=1;entryX=0.2;entryY=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="user" target="notification"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+<!-- 钱包-钱包交易 1:N -->
+<mxCell id="rel15" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="wallet" target="wallet_transaction"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+<!-- 用户-活动点赞 N:N -->
+<mxCell id="rel16" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="user" target="event_like"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+<!-- 活动-活动点赞 1:N -->
+<mxCell id="rel17" style="edgeStyle=none;html=1;exitX=0.2;exitY=1;entryX=0.8;entryY=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="event" target="event_like"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+<!-- 用户-收藏 N:N -->
+<mxCell id="rel18" style="edgeStyle=none;html=1;exitX=1;exitY=0.7;entryX=0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="user" target="favorite"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+<!-- 活动-收藏 1:N -->
+<mxCell id="rel19" style="edgeStyle=none;html=1;exitX=0.3;exitY=1;entryX=0.5;entryY=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="event" target="favorite"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+<!-- 用户-签到 N:N -->
+<mxCell id="rel20" style="edgeStyle=none;html=1;exitX=0.7;exitY=1;entryX=0.3;entryY=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="user" target="checkin"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+<!-- 活动-签到 1:N -->
+<mxCell id="rel21" style="edgeStyle=none;html=1;exitX=0.5;entryX=0.5;entryY=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="event" target="checkin"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+</root></mxGraphModel></diagram></mxfile>

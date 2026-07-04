@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>检查登录状态</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .success { background-color: #d4edda; border-color: #c3e6cb; }
+        .error { background-color: #f8d7da; border-color: #f5c6cb; }
+        .info { background-color: #d1ecf1; border-color: #bee5eb; }
+        pre { background-color: #f8f9fa; padding: 10px; border-radius: 5px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>登录状态检查</h1>
+    
+    <div class="section info">
+        <h2>LocalStorage 内容</h2>
+        <div id="localStorageContent"></div>
+    </div>
+    
+    <div class="section info">
+        <h2>API 测试</h2>
+        <button onclick="testApi()">测试 API 请求</button>
+        <div id="apiTestResult"></div>
+    </div>
+    
+    <div class="section info">
+        <h2>操作</h2>
+        <button onclick="clearLocalStorage()">清除 LocalStorage</button>
+        <button onclick="reloadPage()">重新加载页面</button>
+    </div>
+    
+    <script>
+        function checkLocalStorage() {
+            const contentDiv = document.getElementById('localStorageContent');
+            let html = '';
+            
+            // 检查 token
+            const token = localStorage.getItem('token');
+            if (token) {
+                html += '<div class="success">';
+                html += '<h3>Token</h3>';
+                html += '<p>存在</p>';
+                html += '<p>长度: ' + token.length + '</p>';
+                html += '<p>前20字符: ' + token.substring(0, 20) + '...</p>';
+                html += '</div>';
+            } else {
+                html += '<div class="error">';
+                html += '<h3>Token</h3>';
+                html += '<p>不存在</p>';
+                html += '</div>';
+            }
+            
+            // 检查用户信息
+            const user = localStorage.getItem('user');
+            if (user) {
+                try {
+                    const userObj = JSON.parse(user);
+                    html += '<div class="success">';
+                    html += '<h3>用户信息</h3>';
+                    html += '<pre>' + JSON.stringify(userObj, null, 2) + '</pre>';
+                    html += '</div>';
+                } catch (e) {
+                    html += '<div class="error">';
+                    html += '<h3>用户信息</h3>';
+                    html += '<p>格式错误: ' + e.message + '</p>';
+                    html += '<p>原始内容: ' + user + '</p>';
+                    html += '</div>';
+                }
+            } else {
+                html += '<div class="error">';
+                html += '<h3>用户信息</h3>';
+                html += '<p>不存在</p>';
+                html += '</div>';
+            }
+            
+            // 检查所有键
+            const keys = Object.keys(localStorage);
+            html += '<div class="info">';
+            html += '<h3>所有 LocalStorage 键</h3>';
+            keys.forEach(key => {
+                html += '<p><strong>' + key + ':</strong> ' + localStorage.getItem(key) + '</p>';
+            });
+            html += '</div>';
+            
+            contentDiv.innerHTML = html;
+        }
+        
+        function testApi() {
+            const resultDiv = document.getElementById('apiTestResult');
+            resultDiv.innerHTML = '<p>测试中...</p>';
+            
+            const token = localStorage.getItem('token');
+            
+            fetch('/api/users/me', {
+                headers: {
+                    'Authorization': token ? 'Bearer ' + token : '',
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                resultDiv.innerHTML = '<h3>API 响应</h3>';
+                resultDiv.innerHTML += '<p>状态码: ' + response.status + '</p>';
+                return response.json();
+            })
+            .then(data => {
+                resultDiv.innerHTML += '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+            })
+            .catch(error => {
+                resultDiv.innerHTML += '<div class="error"><p>错误: ' + error.message + '</p></div>';
+            });
+        }
+        
+        function clearLocalStorage() {
+            localStorage.clear();
+            alert('LocalStorage 已清除');
+            checkLocalStorage();
+        }
+        
+        function reloadPage() {
+            window.location.reload();
+        }
+        
+        // 页面加载时检查
+        window.onload = checkLocalStorage;
+    </script>
+</body>
+</html>

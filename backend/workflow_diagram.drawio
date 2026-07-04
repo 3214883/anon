@@ -1,0 +1,79 @@
+<mxfile host="app.diagrams.net"><diagram id="业务流程图" name="活动管理系统流程图"><mxGraphModel dx="1400" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0"><root><mxCell id="0"/><mxCell id="1" parent="0"/>
+
+<!-- 流程1：发布活动流程 -->
+<mxCell id="p1_title" value="【流程1】发布活动" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="50" y="30" width="200" height="30" as="geometry"/></mxCell>
+<mxCell id="p1_1" value="组织者创建活动" style="rounded=1;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="80" y="80" width="140" height="40" as="geometry"/></mxCell>
+<mxCell id="p1_2" value="填写活动信息" style="rounded=1;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="80" y="150" width="140" height="40" as="geometry"/></mxCell>
+<mxCell id="p1_3" value="系统审核" style="rounded=1;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="80" y="220" width="140" height="40" as="geometry"/></mxCell>
+<mxCell id="p1_4" value="审核通过？" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1"><mxGeometry x="80" y="290" width="140" height="40" as="geometry"/></mxCell>
+<mxCell id="p1_5" value="活动上线" style="rounded=1;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#e6e6fa;strokeColor=#6b5b95;" vertex="1" parent="1"><mxGeometry x="100" y="370" width="100" height="40" as="geometry"/></mxCell>
+<mxCell id="p1_6" value="修改后重新提交" style="rounded=1;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="280" y="290" width="140" height="40" as="geometry"/></mxCell>
+<mxCell id="p1_line1" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p1_1" target="p1_2"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="p1_line2" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p1_2" target="p1_3"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="p1_line3" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p1_3" target="p1_4"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="p1_line4" style="edgeStyle=none;html=1;exitX=0.3;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p1_4" target="p1_5"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="p1_line5" style="edgeStyle=none;html=1;exitX=0.7;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p1_4" target="p1_6"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="p1_line6" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="p1_6" target="p1_2"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="p1_yes" value="是" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="p1_line4"><mxGeometry x="-15" y="15" width="30" height="20" relative="1" as="geometry"/></mxCell>
+<mxCell id="p1_no" value="否" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="p1_line5"><mxGeometry x="10" y="-15" width="30" height="20" relative="1" as="geometry"/></mxCell>
+
+<!-- 流程2：报名流程 -->
+<mxCell id="p2_title" value="【流程2】报名流程" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="450" y="30" width="200" height="30" as="geometry"/></mxCell>
+<mxCell id="p2_1" value="用户浏览活动" style="rounded=1;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="480" y="80" width="140" height="40" as="geometry"/></mxCell>
+<mxCell id="p2_2" value="选择票种报名" style="rounded=1;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="480" y="150" width="140" height="40" as="geometry"/></mxCell>
+<mxCell id="p2_3" value="填写报名信息" style="rounded=1;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="480" y="220" width="140" height="40" as="geometry"/></mxCell>
+<mxCell id="p2_4" value="在线付款" style="rounded=1;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="480" y="290" width="140" height="40" as="geometry"/></mxCell>
+<mxCell id="p2_5" value="支付成功？" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1"><mxGeometry x="480" y="360" width="140" height="40" as="geometry"/></mxCell>
+<mxCell id="p2_6" value="获得电子票" style="rounded=1;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#e6e6fa;strokeColor=#6b5b95;" vertex="1" parent="1"><mxGeometry x="500" y="430" width="100" height="40" as="geometry"/></mxCell>
+<mxCell id="p2_7" value="支付失败" style="rounded=1;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="680" y="360" width="100" height="40" as="geometry"/></mxCell>
+<mxCell id="p2_line1" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p2_1" target="p2_2"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="p2_line2" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p2_2" target="p2_3"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="p2_line3" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p2_3" target="p2_4"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="p2_line4" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p2_4" target="p2_5"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="p2_line5" style="edgeStyle=none;html=1;exitX=0.3;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p2_5" target="p2_6"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="p2_line6" style="edgeStyle=none;html=1;exitX=0.7;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p2_5" target="p2_7"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="p2_line7" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="p2_7" target="p2_4"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="p2_yes" value="是" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="p2_line5"><mxGeometry x="-15" y="15" width="30" height="20" relative="1" as="geometry"/></mxCell>
+<mxCell id="p2_no" value="否" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="p2_line6"><mxGeometry x="10" y="-15" width="30" height="20" relative="1" as="geometry"/></mxCell>
+
+<!-- 流程3：签到流程 -->
+<mxCell id="p3_title" value="【流程3】签到流程" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="850" y="30" width="200" height="30" as="geometry"/></mxCell>
+<mxCell id="p3_1" value="用户到达现场" style="rounded=1;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="880" y="80" width="140" height="40" as="geometry"/></mxCell>
+<mxCell id="p3_2" value="出示电子票二维码" style="rounded=1;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="880" y="150" width="140" height="40" as="geometry"/></mxCell>
+<mxCell id="p3_3" value="工作人员扫码" style="rounded=1;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="880" y="220" width="140" height="40" as="geometry"/></mxCell>
+<mxCell id="p3_4" value="验证通过？" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1"><mxGeometry x="880" y="290" width="140" height="40" as="geometry"/></mxCell>
+<mxCell id="p3_5" value="完成签到入场" style="rounded=1;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#e6e6fa;strokeColor=#6b5b95;" vertex="1" parent="1"><mxGeometry x="890" y="360" width="120" height="40" as="geometry"/></mxCell>
+<mxCell id="p3_6" value="验证失败" style="rounded=1;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1"><mxGeometry x="1080" y="290" width="100" height="40" as="geometry"/></mxCell>
+<mxCell id="p3_line1" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p3_1" target="p3_2"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="p3_line2" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p3_2" target="p3_3"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="p3_line3" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p3_3" target="p3_4"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="p3_line4" style="edgeStyle=none;html=1;exitX=0.3;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p3_4" target="p3_5"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="p3_line5" style="edgeStyle=none;html=1;exitX=0.7;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="p3_4" target="p3_6"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="p3_line6" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="p3_6" target="p3_2"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="p3_yes" value="是" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="p3_line4"><mxGeometry x="-15" y="15" width="30" height="20" relative="1" as="geometry"/></mxCell>
+<mxCell id="p3_no" value="否" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="p3_line5"><mxGeometry x="10" y="-15" width="30" height="20" relative="1" as="geometry"/></mxCell>
+
+<!-- 流程4：聊天互动流程 -->
+<mxCell id="p4_title" value="【流程4】聊天互动" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="350" y="520" width="200" height="30" as="geometry"/></mxCell>
+<mxCell id="p4_1" value="用户进入活动群" style="rounded=1;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="380" y="570" width="140" height="40" as="geometry"/></mxCell>
+<mxCell id="p4_2" value="查看群成员" style="rounded=1;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="380" y="640" width="140" height="40" as="geometry"/></mxCell>
+<mxCell id="p4_3" value="发送消息" style="rounded=1;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="380" y="710" width="140" height="40" as="geometry"/></mxCell>
+<mxCell id="p4_4" value="其他用户接收" style="rounded=1;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="380" y="780" width="140" height="40" as="geometry"/></mxCell>
+<mxCell id="p4_5" value="回复消息" style="rounded=1;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="380" y="850" width="140" height="40" as="geometry"/></mxCell>
+<mxCell id="p4_line1" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p4_1" target="p4_2"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="p4_line2" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p4_2" target="p4_3"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="p4_line3" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p4_3" target="p4_4"><mxGeometry relative="1" as="geometry"/></mxCell>
+<mxCell id="p4_line4" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="p4_4" target="p4_5"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+<!-- 图例 -->
+<mxCell id="legend_title" value="图例" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="750" y="520" width="100" height="30" as="geometry"/></mxCell>
+<mxCell id="legend1" value="开始/结束" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1"><mxGeometry x="750" y="560" width="120" height="25" as="geometry"/></mxCell>
+<mxCell id="legend1_box" style="rounded=1;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#e6e6fa;strokeColor=#6b5b95;" vertex="1" parent="1"><mxGeometry x="880" y="560" width="40" height="25" as="geometry"/></mxCell>
+<mxCell id="legend2" value="处理步骤" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1"><mxGeometry x="750" y="595" width="120" height="25" as="geometry"/></mxCell>
+<mxCell id="legend2_box" style="rounded=1;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1"><mxGeometry x="880" y="595" width="40" height="25" as="geometry"/></mxCell>
+<mxCell id="legend3" value="判断节点" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1"><mxGeometry x="750" y="630" width="120" height="25" as="geometry"/></mxCell>
+<mxCell id="legend3_box" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1"><mxGeometry x="880" y="630" width="40" height="25" as="geometry"/></mxCell>
+<mxCell id="legend4" value="子流程" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1"><mxGeometry x="750" y="665" width="120" height="25" as="geometry"/></mxCell>
+<mxCell id="legend4_box" style="rounded=1;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1"><mxGeometry x="880" y="665" width="40" height="25" as="geometry"/></mxCell>
+
+</root></mxGraphModel></diagram></mxfile>

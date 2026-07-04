@@ -1,0 +1,71 @@
+## 活动平台系统 - 总ER图
+## draw.io 一键导入版
+# label: %name%<br style="font-size: 60%"/><hr style="width: 100%"/><div align="left">%desc%</div>
+# style: shape=roundedrect;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;strokeWidth=1;fontFamily=Microsoft YaHei;
+# parent: Automatic
+# left: %pk%
+# right: %fk%
+# connect: {"from": "from", "to": "to", "fromcardinality": "from_card", "tocardinality": "to_card", "style": "endArrow=blockThin;endFill=1;fontSize=10;"}
+# padding: -18
+# ignore: name,desc,pk,fk,from,to,from_card,to_card
+# nodespacing: 120
+# levelspacing: 120
+# edgespacing: 25
+# layout: organic
+
+name,desc,pk,fk,from,to,from_card,to_card,bgcolor
+"👤 用户中心",
+"ユーザー管理・プロフィール・認証",
+id,
+,,,#E3F2FD
+"📅 活动核心",
+"イベント作成・管理・検索",
+id,
+,,,#E8F5E9
+"🎟️ 报名票务",
+"申込み・電子チケット・座席管理",
+id,
+,,,#FFF3E0
+"💳 支付结算",
+"決済・財務・清算システム",
+id,
+,,,#F3E5F5
+"💬 互动交流",
+"コメント・評価・チャット",
+id,
+,,,#E0F7FA
+"🔔 通知消息",
+"通知・メッセージ・アラート",
+id,
+,,,#F1F8E9
+"👤 用户中心","📅 活动核心",id,organizerId,"👤 用户中心","📅 活动核心",1,N,#E3F2FD
+"👤 用户中心","🎟️ 报名票务",id,userId,"👤 用户中心","🎟️ 报名票务",N,N,#E3F2FD
+"📅 活动核心","🎟️ 报名票务",id,eventId,"📅 活动核心","🎟️ 报名票务",1,N,#E8F5E9
+"🎟️ 报名票务","💳 支付结算",id,registrationId,"🎟️ 报名票务","💳 支付结算",1,N,#FFF3E0
+"👤 用户中心","💳 支付结算",id,userId,"👤 用户中心","💳 支付结算",1,N,#E3F2FD
+"📅 活动核心","💳 支付结算",id,eventId,"📅 活动核心","💳 支付结算",1,N,#E8F5E9
+"👤 用户中心","💬 互动交流",id,userId,"👤 用户中心","💬 互动交流",N,N,#E3F2FD
+"📅 活动核心","💬 互动交流",id,eventId,"📅 活动核心","💬 互动交流",1,N,#E8F5E9
+"👤 用户中心","🔔 通知消息",id,userId,"👤 用户中心","🔔 通知消息",1,N,#E3F2FD
+"📅 活动核心","🔔 通知消息",id,eventId,"📅 活动核心","🔔 通知消息",1,N,#E8F5E9
+
+
+## 导入方法：
+## 1. 打开 draw.io
+## 2. 菜单栏 → 排列 → 插入 → 高级 → CSV...
+## 3. 粘贴全部内容 → 导入
+
+## 导入后效果：
+## ✅ 6大模块自动生成
+## ✅ 模块间关系自动连线
+## ✅ 基数（1对N、N对N）自动标注
+## ✅ 颜色分类区分模块
+## ✅ 完美显示中文
+
+## 模块详细说明：
+## 👤 用户中心：user, wallet, wallet_transaction
+## 📅 活动核心：event, ticket
+## 🎟️ 报名票务：registration, checkin
+## 💳 支付结算：payment, settlement
+## 💬 互动交流：comment, rating, event_like, favorite
+## 🔔 通知消息：notification, chat_message

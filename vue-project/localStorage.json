@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin User",
+      "email": "2230053853@qq.com",
+      "password": "admin123",
+      "role": "admin"
+    }
+  ]
+}

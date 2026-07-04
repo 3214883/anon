@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Token Test</title>
+</head>
+<body>
+    <h1>Token Test</h1>
+    <div id="result"></div>
+    <script>
+        // Check localStorage
+        const token = localStorage.getItem('token');
+        const user = localStorage.getItem('user');
+        
+        let result = '<h2>LocalStorage Data:</h2>';
+        result += '<p>Token: ' + (token ? token : 'No token found') + '</p>';
+        result += '<p>User: ' + (user ? user : 'No user found') + '</p>';
+        
+        // Decode token if present
+        if (token) {
+            try {
+                const payload = JSON.parse(atob(token.split('.')[1]));
+                result += '<h2>Token Payload:</h2>';
+                result += '<pre>' + JSON.stringify(payload, null, 2) + '</pre>';
+            } catch (e) {
+                result += '<p>Error decoding token: ' + e.message + '</p>';
+            }
+        }
+        
+        // Test API request
+        result += '<h2>API Test:</h2>';
+        if (token) {
+            fetch('http://localhost:3000/api/registrations', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token
+                },
+                body: JSON.stringify({
+                    eventId: 2,
+                    quantity: 1,
+                    contactName: 'Test User',
+                    contactPhone: '13800138000'
+                })
+            })
+            .then(response => {
+                result += '<p>API Response Status: ' + response.status + '</p>';
+                return response.json();
+            })
+            .then(data => {
+                result += '<pre>API Response Data: ' + JSON.stringify(data, null, 2) + '</pre>';
+                document.getElementById('result').innerHTML = result;
+            })
+            .catch(error => {
+                result += '<p>API Error: ' + error.message + '</p>';
+                document.getElementById('result').innerHTML = result;
+            });
+        } else {
+            result += '<p>No token found, cannot test API</p>';
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+</html>

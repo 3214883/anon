@@ -1,0 +1,40 @@
+## 数据库 ER 图 - 活动平台系统
+## 直接复制全部内容，打开 draw.io → 菜单栏 → 排列 → 插入 → 高级 → CSV... 粘贴即可
+
+# label: %table%<br style="font-size: 60%"/><hr style="width: 100%"/><div align="left">%columns%</div>
+# style: shape=table;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;strokeWidth=1;fontFamily=Microsoft YaHei;
+# parent: Automatic
+# left: %pk%
+# right: %fk%
+# connect: {"from": "ref_table", "to": "table", "fromcardinality": "from_card", "tocardinality": "to_card", "style": "endArrow=blockThin;endFill=1;fontSize=10;"}
+# padding: -18
+# ignore: table,columns,pk,fk,ref_table,from_card,to_card
+# link: url
+# nodespacing: 120
+# levelspacing: 120
+# edgespacing: 25
+# layout: organic
+
+table,columns,pk,fk,ref_table,from_card,to_card,url,bgcolor
+user,id ↑ INTEGER<br>username VARCHAR<br>email VARCHAR<br>phone VARCHAR<br>password VARCHAR<br>avatar VARCHAR<br>role VARCHAR<br>isActive TINYINT<br>bio TEXT<br>createdAt DATETIME,id,,,,#E3F2FD
+event,id ↑ INTEGER<br>title VARCHAR<br>description TEXT<br>date DATE<br>location VARCHAR<br>price DECIMAL<br>capacity INTEGER<br>organizerId ↓ INTEGER<br>status VARCHAR<br>isSponsored TINYINT<br>createdAt DATETIME,id,organizerId,user,N,1,#E8F5E9
+registration,id ↑ INTEGER<br>eventId ↓ INTEGER<br>userId ↓ INTEGER<br>status VARCHAR<br>paymentStatus VARCHAR<br>checkedIn TINYINT<br>totalAmount DECIMAL<br>createdAt DATETIME,id,"eventId,userId","event,user",N,N,"#FFF3E0"
+wallet,id ↑ INTEGER<br>userId ↓ INTEGER<br>balance DECIMAL<br>frozenBalance DECIMAL<br>createdAt DATETIME,id,userId,user,1,1,#F3E5F5
+wallet_transaction,id ↑ INTEGER<br>walletId ↓ INTEGER<br>userId ↓ INTEGER<br>amount DECIMAL<br>type VARCHAR<br>status VARCHAR<br>createdAt DATETIME,id,"walletId,userId","wallet,user",N,1,#ECEFF1
+payment,id ↑ INTEGER<br>registrationId ↓ INTEGER<br>userId ↓ INTEGER<br>eventId ↓ INTEGER<br>amount DECIMAL<br>paymentMethod VARCHAR<br>status VARCHAR<br>createdAt DATETIME,id,"registrationId,userId,eventId","registration,user,event",N,1,#FFEBEE
+settlement,id ↑ INTEGER<br>eventId ↓ INTEGER<br>organizerId ↓ INTEGER<br>totalAmount DECIMAL<br>feeAmount DECIMAL<br>settleAmount DECIMAL<br>status VARCHAR<br>createdAt DATETIME,id,"eventId,organizerId","event,user",1,1,#FBE9E7
+ticket,id ↑ INTEGER<br>eventId ↓ INTEGER<br>name VARCHAR<br>price DECIMAL<br>quantity INTEGER<br>soldCount INTEGER,id,eventId,event,N,1,#E0F7FA
+chat_message,id ↑ INTEGER<br>eventId ↓ INTEGER<br>userId ↓ INTEGER<br>content TEXT<br>createdAt DATETIME,id,"eventId,userId","event,user",N,N,"#E0F2F1"
+notification,id ↑ INTEGER<br>userId ↓ INTEGER<br>type VARCHAR<br>title VARCHAR<br>content TEXT<br>read TINYINT<br>createdAt DATETIME,id,userId,user,N,1,#F1F8E9
+comment,id ↑ INTEGER<br>eventId ↓ INTEGER<br>userId ↓ INTEGER<br>content TEXT<br>likes INTEGER<br>createdAt DATETIME,id,"eventId,userId","event,user",N,N,"#DCEDC8"
+rating,id ↑ INTEGER<br>eventId ↓ INTEGER<br>userId ↓ INTEGER<br>score INTEGER<br>content TEXT<br>createdAt DATETIME,id,"eventId,userId","event,user",N,N,"#D1C4E9"
+event_like,id ↑ INTEGER<br>eventId ↓ INTEGER<br>userId ↓ INTEGER<br>createdAt DATETIME,id,"eventId,userId","event,user",N,N,"#FFCCBC"
+favorite,id ↑ INTEGER<br>eventId ↓ INTEGER<br>userId ↓ INTEGER<br>createdAt DATETIME,id,"eventId,userId","event,user",N,N,"#FFECB3"
+checkin,id ↑ INTEGER<br>eventId ↓ INTEGER<br>userId ↓ INTEGER<br>latitude DOUBLE<br>longitude DOUBLE<br>createdAt DATETIME,id,"eventId,userId","event,user",N,N,"#C5CAE9"
+
+
+## 图例说明：
+## ↑ 主键 (PK)
+## ↓ 外键 (FK)
+## 基数：1 对 N，N 对 N
+## 背景色按模块分类
